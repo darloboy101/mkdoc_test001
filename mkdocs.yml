@@ -4,9 +4,9 @@ site_description: Proof of concept for lesson
 site_author: University of Leeds
 site_url: https://squidfunk.github.io/mkdocs-material/
 
-#Repository
-repo_name: squidfunk/mkdocs-material
-repo_url: https://github.com/squidfunk/mkdocs-material
+# Repository
+repo_name: darloboy101/mkdoc_test001
+repo_url: https://github.com/darloboy101/mkdoc_test001
 
 # Copyright
 copyright: Copyright &copy; 2020 University of Leeds
