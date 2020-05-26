@@ -1,0 +1,1089 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Proof of concept for lesson">
+      
+      
+        <link rel="canonical" href="https://squidfunk.github.io/mkdocs-material/sample001/">
+      
+      
+        <meta name="author" content="University of Leeds">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.1">
+    
+    
+      
+        <title>Introduction to Python - AI Module Lesson Sample</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.71dfd922.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.616af814.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://squidfunk.github.io/mkdocs-material/" title="AI Module Lesson Sample" class="md-header-nav__button md-logo" aria-label="AI Module Lesson Sample">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 17a2 2 0 002-2V4a2 2 0 00-2-2H9.46c.35.61.54 1.3.54 2h10v11h-9v2m4-10v2H9v13H7v-6H5v6H3v-8H1.5V9a2 2 0 012-2H15M8 4a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 012 2z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            AI Module Lesson Sample
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Introduction to Python
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/darloboy101/mkdoc_test001/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    darloboy101/mkdoc_test001
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://squidfunk.github.io/mkdocs-material/" title="AI Module Lesson Sample" class="md-nav__button md-logo" aria-label="AI Module Lesson Sample">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 17a2 2 0 002-2V4a2 2 0 00-2-2H9.46c.35.61.54 1.3.54 2h10v11h-9v2m4-10v2H9v13H7v-6H5v6H3v-8H1.5V9a2 2 0 012-2H15M8 4a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 012 2z"/></svg>
+
+    </a>
+    AI Module Lesson Sample
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/darloboy101/mkdoc_test001/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    darloboy101/mkdoc_test001
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introduction to Python
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Introduction to Python" class="md-nav__link md-nav__link--active">
+      Introduction to Python
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#an-overview" class="md-nav__link">
+    An overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-programming" class="md-nav__link">
+    What is programming?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-can-you-expect" class="md-nav__link">
+    What can you expect?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-python" class="md-nav__link">
+    Getting started with Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started with Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    Mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-the-interactive-mode" class="md-nav__link">
+    Introducing the interactive mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrated-development-environments" class="md-nav__link">
+    Integrated development environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrated development environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-spyder" class="md-nav__link">
+    Installing Spyder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-spyder" class="md-nav__link">
+    Introduction to Spyder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimenting-using-spyder" class="md-nav__link">
+    Experimenting using Spyder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-program" class="md-nav__link">
+    First program
+  </a>
+  
+    <nav class="md-nav" aria-label="First program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-example" class="md-nav__link">
+    A simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-turn" class="md-nav__link">
+    Your turn
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-review" class="md-nav__link">
+    Unit review
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sample002/" title="Displaying code" class="md-nav__link">
+      Displaying code
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#an-overview" class="md-nav__link">
+    An overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-programming" class="md-nav__link">
+    What is programming?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-can-you-expect" class="md-nav__link">
+    What can you expect?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-python" class="md-nav__link">
+    Getting started with Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started with Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    Mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-the-interactive-mode" class="md-nav__link">
+    Introducing the interactive mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrated-development-environments" class="md-nav__link">
+    Integrated development environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrated development environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-spyder" class="md-nav__link">
+    Installing Spyder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-spyder" class="md-nav__link">
+    Introduction to Spyder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimenting-using-spyder" class="md-nav__link">
+    Experimenting using Spyder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-program" class="md-nav__link">
+    First program
+  </a>
+  
+    <nav class="md-nav" aria-label="First program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-example" class="md-nav__link">
+    A simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-turn" class="md-nav__link">
+    Your turn
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-review" class="md-nav__link">
+    Unit review
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/darloboy101/mkdoc_test001/edit/master/docs/sample001.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="introduction-to-python">Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permanent link">&para;</a></h1>
+<p>On this page we have rebuilt a section of existing content from <a href="https://soc-dm.leeds.ac.uk/module/40/view">Programming for the Web</a> as a proof of content.</p>
+<p><strong>Learning outcomes:</strong></p>
+<p>By the end of this unit you will:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nulla vel eros venenatis, imperdiet enim id, faucibus nisi</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
+</ul>
+<h2 id="an-overview">An overview<a class="headerlink" href="#an-overview" title="Permanent link">&para;</a></h2>
+<p>Lorem</p>
+<div class="video-wrapper">
+  <iframe scrolling="auto" marginheight="0" marginwidth="0" src="//mymedia.leeds.ac.uk/Mediasite/Play/21d593b9c4f44074a14fceed4726d7eb1d" width="100%" height="400" frameborder="0"></iframe>
+</div>
+
+<ul>
+<li><a href="">Link to transcript</a></li>
+<li><a href="">Link to slides</a></li>
+</ul>
+<h2 id="what-is-programming">What is programming?<a class="headerlink" href="#what-is-programming" title="Permanent link">&para;</a></h2>
+<p>Before we describe what programming is first it is essential that we understand what a computer is and what a computer does. A computer is a machine that computes, it may be a person who manually computes values or it may be some electromechanical device. Most people will be familiar with digital computers, the type you are most likely reading this content on. All computers have a single task, that is to compute some value. How the computer computes such a value is the responsibility of a computer programmer.</p>
+<p>A computer program can be thought of as a set of instructions, which will lead the computer to calculating the correct value. In the context of a human computer, this may be a set of instructions written in English, like a recipe for baking a cake. However, English is an ambiguous language, allowing a sentence to be interpreted in many different ways. This ambiguity can have disastrous consequences. A computer programming language is an unambiguous language which allows the programmer to communicate a set of instructions to a computer.</p>
+<p>At the advent of the modern digital computer, the method of provide instructions to the computer was very primitive. Each instruction carried out a single operation and many instructions were needed to do simple operation such as adding two numbers together. These types of programming language are called low level language, they provide a very thin layer of abstraction from the physical device a computer program is running on and require an in depth knowledge of the computers architecture. In this module we will be learning a high level programming language. High level programming languages provide a high level of abstraction away from the physical computer that is carrying out the instructions. These types of programming languages have constructs such as <code>variable</code> , <code>for</code> loops and <code>if</code> statements (we will be introducing these topic this week).</p>
+<p>In this module we will be using the Python programming language. The Python programming language first appeared in 1991 and was designed by Guido van Rossum. Python is a multi-paradigm programming language incorporating many features which are also found in many other modern programming languages, such as <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object orientation</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a> and <a href="https://en.wikipedia.org/wiki/Metaprogramming">meta programming</a>. Python differs from some modern programming languages by the fact that it is an interpreted language, we will learn more about what this means later. Python is one of the <a href="https://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">top ten</a> most used programming languages (as of May 2015). Because of these reasons, Python is among the best programming languages to learn for a first language for people outside the field of computer science, it will allow us to introduce programming concepts which will be transferable to many other modern computer languages while allowing us to avoid some of the awkwardness of some other languages.</p>
+<p>In addition to the Python programming language we will also use javascript. Javascript is a very common programming language which is used by web developers to create interactive and user friendly webpages. We will transfer the knowledge and understanding of programming, that you will have developed while learning Python, into the context of programming Javascript. Both Python and Javascript form the foundation of modern web programming.</p>
+<h2 id="what-can-you-expect">What can you expect?<a class="headerlink" href="#what-can-you-expect" title="Permanent link">&para;</a></h2>
+<p>In this module you can expect to learn the fundamental concepts of programming, you will gain the experience to apply these concepts to programming in Python and Javascript. This module will start you on a long road to becoming a competent software developer.</p>
+<p>Each week you will be presented with a set of new topics to learn. These topics will be presented in an interactive way; we will present the theory, provide examples, discuss the advantages and disadvantages of different approaches and finally there will be exercises. Although the exercises are not directly accessed, they will be essential for you to develop the skills required to complete the multiple choice questions on the vle and the courseworks.</p>
+<p>The module will be assessed via three pieces of coursework which are available for you to browse now on the module homepage. You may hand them in at any time up to the submission deadline. The pace at which you progress through the content is your choice, we have broken the content into blocks that we believe are achievable in six hours each (equivalent to one weeks work).</p>
+<p>The module is supported via lab classes which are your opportunity to ask question to the module staff and to get feedback on your solutions to exercises. The times and locations of the lab classes can be found on the module homepage.</p>
+<p>The table below outlines the topics that wil be covered during this module and in which week they are introduced.</p>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Data type</th>
+<th>Key words</th>
+<th>Operations</th>
+<th>Programming topics</th>
+<th>Application topics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Numeric, Strings and Booleans</td>
+<td><code>if</code>/<code>else</code>, <code>for</code> and <code>range</code></td>
+<td><code>+</code>, <code>*</code>, <code>-</code>, <code>/</code></td>
+<td>Indentation</td>
+<td>Hello world, using loops and conditionals</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Lists and Decimals</td>
+<td><code>while</code>, <code>elif</code></td>
+<td><code>%</code>, <code>!</code>, <code>and</code>, <code>or</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td><code>break</code>, <code>continue</code></td>
+<td><code>%</code>, <code>!</code>, <code>and</code>, <code>or</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>tuple</td>
+<td><code>def</code>, <code>return</code></td>
+<td><code>%</code>, <code>!</code>, <code>and</code>, <code>or</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td><code>try</code>, <code>except</code></td>
+<td></td>
+<td>File I/O</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Dictionaries</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td><code>import</code></td>
+<td></td>
+<td>Using libraries</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Objects</td>
+<td><code>class</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Strings, Numerics, List and Functions</td>
+<td></td>
+<td><code>+,*,-,/</code></td>
+<td>JavaScript Syntax</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td></td>
+<td></td>
+<td></td>
+<td>HTML DOM</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td></td>
+<td></td>
+<td></td>
+<td>External APIs</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="getting-started-with-python">Getting started with Python<a class="headerlink" href="#getting-started-with-python" title="Permanent link">&para;</a></h2>
+<p>In this module we will be using Python version 3. In 2008 Python 3 was released which is not compatible with earlier versions of Python.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A cautionary note, if you search for additional resources in books or online make sure that any articles you read are for Python 3.</p>
+</div>
+<p>All university cluster machine have Python 3 installed as well as Spyder 3 (a program that we will be using later), therefore you will not need to install Python 3 or Spyder. However, if you wish to complete this course on your own computer you will need to make sure you have the correct software installed. All of the software you will need to complete this course is free and open source.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>In order to be able to run Python programs on your own computer you will need to make sure you have Python installed. To check if you have Python installed open up a terminal and type <code>python --version</code> followed by an enter. If you get an output such as 'Python 3.x.y' where x,y are numbers then you have Python 3 installed correctly and you may skip to the next sections. If you get any other message then continue reading the installation instructions relevant to your operating system below.</p>
+<p>We have found that the most straightforward way of installing Python 3 and Spyder is to use the Anaconda installation. This can be found <a href="https://www.continuum.io/downloads">here</a>.</p>
+<p>Follow the instructions to get the version suitable for you operating system. Make sure you get the Anaconda 3.4 version.</p>
+<p>If the Anaconda version does not work for some reason, you could try one of the following alternatives:</p>
+<h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
+<p>To install Python on a Windows machine go to the Python website and download the appropriate Windows installer (<a href="https://www.python.org/ftp/python/3.4.3/python-3.4.3.msi">x86</a>/ <a href="https://www.python.org/ftp/python/3.4.3/python-3.4.3.amd64.msi">x86-64</a>). To start the installation process, navigate to the folder you saved the installer file into and double click on the file. You should accept all default values that the installer provides.</p>
+<p>To ensure that the installation has been successful open up a terminal and type <code>python --version</code>. You should now see a meesage such as 'Python 3.4.3'.</p>
+<h4 id="mac">Mac<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h4>
+<p>To install Python on a Mac machine go to the Python website and download the appropriate Mac installer (64-bit/32-bit/ i386/PPC). To start the installation process, navigate to the folder you saved the installer file into and double click on the file. You should accept all default values that the installer provides.</p>
+<p>To ensure that the installation has been successful open up a terminal and type <code>python --version</code>. You should now see a meesage such as 'Python 3.4.3'.</p>
+<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
+<p>To install Python on a linux distribution, please refer to the help pages of your specific distribution. Links to some of the more popular distributions are provided below.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Distribution</strong></th>
+<th><strong>Installing Python 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu</td>
+<td>Installed by default</td>
+</tr>
+<tr>
+<td>Debian</td>
+<td>Installed by default</td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td>Installed by default</td>
+</tr>
+<tr>
+<td>Gentoo</td>
+<td>Installed by default</td>
+</tr>
+<tr>
+<td>Arch</td>
+<td><code>pacman -Sy python</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="introducing-the-interactive-mode">Introducing the interactive mode<a class="headerlink" href="#introducing-the-interactive-mode" title="Permanent link">&para;</a></h3>
+<p>The Python programming language is an interpreted language and therefore your code does not need compiling like some other languages (e.g. C/C++, Java, .net). Because of this it is possible to interact with the Python interpreter interactively, that is, you type an instruction and it will process it and give you a response if one is due. As an introduction to the Python programming language we will explore the interactive Python interpreter before continuing. </p>
+<p>Open a terminal and start a Python interpreter by typing <code>python</code>. You should see text similar to the following.</p>
+<div class="highlight"><pre><span></span><code>Python 3.2.2 (default, Sep 26 2011, 17:16:37) 
+[GCC 4.4.4 20100726 (Red Hat 4.4.4-13)] on linux2
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; 
+</code></pre></div>
+
+<p>The three angled brackets ( <code>&gt;&gt;&gt;</code> ) denote the Python prompt and you can type instructions for the Python interpreter to execute. During this module you will be presented with exercise, some of which can be completed using a Python interpreter which is embedded in the webpage. By using the interpreter embedded in the webpage you will be able to try out snippets of code (a small piece of code) when you are working on a computer that does not have Python installed. Where it is possible to use an embedded interpetter you will see a button labelled 'Try it yourself'.</p>
+<p>Let us explore the Python interpreter. Open a terminal and open the Python interpreter (you should now see the Python prompt). Into the Python interpreter type the follow.</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!!!&quot;</span><span class="p">)</span>
+</code></pre></div>
+Once you press eneter you will see something similar to</p>
+<div class="highlight"><pre><span></span><code>Python 3.2.2 (default, Sep 26 2011, 17:16:37) 
+[GCC 4.4.4 20100726 (Red Hat 4.4.4-13)] on linux2
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; print(&quot;Hello World!!!&quot;)
+Hello World!!!
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>You have successfully written your first program in Python. Throughout this module you will see snippets of code, they are formatted to standout from the surrounding text. Each time you encounter a snippet of code you should carefully read it and understand what each line does. Each snippet of code will be accompanied with a brief explanation of what it does.</p>
+<p>The Python interpreter can act like a calculator, try running the following instructions.</p>
+<p><div class="highlight"><pre><span></span><code><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</code></pre></div>
+The symbol <code>+</code> is the symbol that denotes addition of numbers in Python.</p>
+<p><div class="highlight"><pre><span></span><code><span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span>
+</code></pre></div>
+The symbol <code>*</code> is the symbol that denotes multiplication of numbers in Python.</p>
+<p><div class="highlight"><pre><span></span><code><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span>
+</code></pre></div>
+In Python the evaluation of mathematical expressions is identical to that in mathematics. It is possible to alter the evaluation order by using round brackets.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
+</code></pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Python is whitespace dependent. Whitespace is any character that alters the formmating of text but does not display a printed character, such as spaces, tabs and new lines. Whitespace symbols in Python have meaning, so when you are writing your programs in this module take care to ensure you have no extra whitespace characters.</p>
+</div>
+<h3 id="integrated-development-environments">Integrated development environments<a class="headerlink" href="#integrated-development-environments" title="Permanent link">&para;</a></h3>
+<p>Although the interactive Python interpreter is useful, when it comes to writing programs that you want to keep it is awkward as you can not save the sequence of instructions you have just enetered. We would like a method of saving a sequences of instructions so that we can execute them whenever we wish. Files that contain Python instructions, sometimes called Python code, are suffixed with the file extenion <code>.py</code>. </p>
+<p>It is possible to write Python code in any text editor, however, there is a more convenient way. An integrated development environment (IDE) is a program that makes developing programs easier. IDE's often contain useful tools like automatic formatting, colour coding and tools to help you figure out why a program is not behaviouring as you expect. The IDE that will be used in this module is called Spyder and is a cross platform IDE. Spyder is not included in the standard Python installation so we must install it separately (Spyder is installed by default on the university machines).</p>
+<h4 id="installing-spyder">Installing Spyder<a class="headerlink" href="#installing-spyder" title="Permanent link">&para;</a></h4>
+<p>To install Spyder download the appropriate installation file for your operating system.</p>
+<table>
+<thead>
+<tr>
+<th>Operating system</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td><a href="https://bitbucket.org/spyder-ide/spyderlib/downloads/spyder-2.3.4.win32-py3.4.exe">32-bit</a>/<a href="https://bitbucket.org/spyder-ide/spyderlib/downloads/spyder-2.3.4.win-amd64-py3.4.exe">amd-64</a></td>
+</tr>
+<tr>
+<td>Mac</td>
+<td><a href="https://bitbucket.org/spyder-ide/spyderlib/downloads/spyder-2.3.4-py2.7.dmg">Spyder</a></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><a href="https://bitbucket.org/spyder-ide/spyderlib/downloads/spyder-2.3.4.zip">Spyder</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="introduction-to-spyder">Introduction to Spyder<a class="headerlink" href="#introduction-to-spyder" title="Permanent link">&para;</a></h4>
+<p>Lorem ipsum.</p>
+<div class="video-wrapper">
+  <iframe scrolling="auto" marginheight="0" marginwidth="0" src="//mymedia.leeds.ac.uk/Mediasite/Play/dcc861d2ef4540b097b351963d245bb21d" width="100%" height="400" frameborder="0"></iframe>
+</div>
+
+<ul>
+<li><a href="">Link to transcript</a></li>
+</ul>
+<h4 id="experimenting-using-spyder">Experimenting using Spyder<a class="headerlink" href="#experimenting-using-spyder" title="Permanent link">&para;</a></h4>
+<p>A further look at Spyder's interactive console.</p>
+<div class="video-wrapper">
+  <iframe scrolling="auto" marginheight="0" marginwidth="0" src="//mymedia.leeds.ac.uk/Mediasite/Play/32ec770a0b984e809ab8b057869b6f911d" width="100%" height="400" frameborder="0"></iframe>
+</div>
+
+<ul>
+<li><a href="">Link to transcript</a></li>
+</ul>
+<h2 id="first-program">First program<a class="headerlink" href="#first-program" title="Permanent link">&para;</a></h2>
+<p>We will now write our first program using Spyder, this will allow us to save the program so that we can run it again later is we wish. This will also allow us to change and reuse our code. To create and run a program in Spyder, carry out the following steps:</p>
+<ul>
+<li>
+<p>Open the Spyder application</p>
+</li>
+<li>
+<p>Click on File &gt; New File, this will create a new editing tab.</p>
+</li>
+<li>
+<p>Inside the editing tab type the following:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from Spyder IDE&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>Save the file by clicking, File &gt; Save(select an appropriate folder and filename)</p>
+</li>
+<li>
+<p>Run your program by clicking Run &gt; Run (alternative the shortcut F5 will run the current file)</p>
+</li>
+</ul>
+<p>Throughout this workbook there are many exercises to complete and most of the exercises require you to write programs. It is essential that you give your programs sensible filenames so that you can come back to them later. A recommendation is that you create a new file for each exercise that your attempt, this will suffice until you start developing larger programs later in the module.</p>
+<h3 id="a-simple-example">A simple example<a class="headerlink" href="#a-simple-example" title="Permanent link">&para;</a></h3>
+<p>Using the same steps as before will we create a new file in Spyder to create another example. A program can seem a little useless if it does not interact with the user, in the next section we will cover how to get the program to prompt the user for input. Create a new file in Spyder, the same way as you did in the previous task and type the following code. Once you have typed in the code run the program and see what the application does.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Program for computing and displaying squares of numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;***********************************************&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the Amazing Square Computing Program&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter any whole number :&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Reads in a string of characters</span>
+<span class="n">numstring</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="c1"># Converts the string to a whole number</span>
+<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numstring</span><span class="p">)</span>
+
+<span class="c1"># Prints a string to the shell</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;The square of&quot;</span> <span class="p">,</span> <span class="n">number</span> <span class="p">,</span> <span class="s2">&quot;is&quot;</span> <span class="p">,</span> <span class="n">number</span> <span class="o">*</span> <span class="n">number</span> <span class="p">,</span> <span class="s2">&quot; !!! &quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>This simple program prompts the user to enter a whole numer (line 4-7), the value that the user enters is then converted into a number (line 10) and then the program will print out a message reporting the number that the user entered followed by the square of the number. The process of converting the users input to a number if a topic we will explore in detail later.</p>
+<h3 id="your-turn">Your turn<a class="headerlink" href="#your-turn" title="Permanent link">&para;</a></h3>
+<p>Try the following questions, you may find it useful to keep a written note of your answers for when it comes to completing the coursework.</p>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p>What is the result of the following instructions?</p>
+<div class="highlight"><pre><span></span><code><span class="mi">7</span> <span class="o">/</span> <span class="mi">4</span>       
+</code></pre></div>
+
+<details class="note"><summary>Sample solution</summary><div class="highlight"><pre><span></span><code><span class="mf">1.75</span>    
+</code></pre></div>
+
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p>What is the result of the following instructions?</p>
+<div class="highlight"><pre><span></span><code><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span>      
+</code></pre></div>
+
+<details class="note"><summary>Sample solution</summary><div class="highlight"><pre><span></span><code><span class="mi">4</span>   
+</code></pre></div>
+
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p>What is the result of the following instructions?</p>
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Snake master&quot;</span>       
+</code></pre></div>
+
+<details class="note"><summary>Sample solution</summary><p>The result is this instruction is to assign a variable named <code>name</code> the value "Snake master".</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 4</p>
+<p>What is the result of the following instructions?</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python is the best&quot;</span><span class="p">)</span>     
+</code></pre></div>
+
+<details class="note"><summary>Sample solution</summary><p>The code prints out: 
+<div class="highlight"><pre><span></span><code><span class="n">Python</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">best</span>
+<span class="n">Python</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">best</span>
+<span class="n">Python</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">best</span>
+<span class="n">Python</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">best</span>
+<span class="n">Python</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">best</span>  
+</code></pre></div></p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 5</p>
+<p>Try to determine what the symbol <code>%</code> does in Python. Try entering the following instruction replacing the numbers by a few different values</p>
+<div class="highlight"><pre><span></span><code><span class="mi">7</span> <span class="o">%</span> <span class="mi">4</span>   
+</code></pre></div>
+
+<details class="note"><summary>Sample solution</summary><p>The % symbol is the modulus symbol, it will return the remainder when the first number is divided by the second number.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 6</p>
+<p>Write a program that prints out your name in ascii art, similar to the example below.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot; CCC  OOO  M   M PPPP   11  0000 0000   11 &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C    O   O MM MM P  P  111  0  0 0  0  111 &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C    O   O M M M PPPP   11  0  0 0  0   11 &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C    O   O M   M P      11  0  0 0  0   11 &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; CCC  OOO  M   M P     1111 0000 0000  1111&quot;</span><span class="p">)</span>    
+</code></pre></div>
+
+</div>
+<h2 id="unit-review">Unit review<a class="headerlink" href="#unit-review" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Nulla vel eros venenatis, imperdiet enim id, faucibus nisi</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="Welcome" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../sample002/" title="Displaying code" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Displaying code
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

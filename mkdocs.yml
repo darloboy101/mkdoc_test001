@@ -5,7 +5,7 @@ site_author: University of Leeds
 site_url: https://squidfunk.github.io/mkdocs-material/
 
 # Repository
-repo_name: darloboy101/mkdoc_test001
+repo_name: darloboy101/mkdoc_test001  
 repo_url: https://github.com/darloboy101/mkdoc_test001
 
 # Copyright
@@ -35,7 +35,7 @@ google_analytics:
 nav:
   - Welcome: index.md
   - Introduction to Python: sample001.md
-  - Lesson 1: page1.md
+  - Displaying code: sample002.md
 
 
 extra_javascript:

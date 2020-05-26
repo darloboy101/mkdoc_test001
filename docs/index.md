@@ -8,13 +8,14 @@ Some of the advantages we've identified are:
 
 - Material theme is adaptable and provides a high standard of accessibility and mobile usability out of the box.
 
+- Content will be authored in Markdown. Git integration means that content management / version control between Computer Science and the DES should be straightforward to manage.
+
 - Content will be processed to a static site that can be hosted from the Minerva content collection. This will significantly simplify requirements for the hosting / maintenance of content. 
 
 - International students with bandwith challenges should be able to download content to view locally. It should be possible to process MkDocs content to additional formats, such as PDF and ePub. 
 
 - Robust support for displaying Python code samples using Pygments and CodeHilite.
 
-- Content can be authored in Markdown. Integration with git may further facilitate workflow.
 
 - Admonition extension allows block-styled content that supports pedagogical uses such as presenting questions with solutions, etc.
 
@@ -22,96 +23,4 @@ Some of the advantages we've identified are:
 
 - Integration between MkDocs and Jupyter Notebooks is possible (though needs to be tested in detail.)
 
-
-## Displaying code
-
-Here are some simple code blocks. They have a built in copy function, which is nice.
-
-
-### Code no line numbers
-
-``` python
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
-
-### Code with line numbers
-
-``` python linenums="1"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
-
-### Code with line numbers and highlighted lines
-
-``` python linenums="1" hl_lines="3 4"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
-
-
-### Tabbed code blocks
-
-=== "Step 1"
-	``` python
-	""" Bubble sort """
-	def bubble_sort(items):
-	```
-
-=== "Step 2"
-	``` python
-	""" Bubble sort """
-	def bubble_sort(items):
-	    for i in range(len(items)):
-	```
-
-=== "Step 3"
-	``` python
-	""" Bubble sort """
-	def bubble_sort(items):
-	    for i in range(len(items)):
-	        for j in range(len(items) - 1 - i):
-	```
-
-=== "Step 4"
-	``` python
-	""" Bubble sort """
-	def bubble_sort(items):
-	    for i in range(len(items)):
-	        for j in range(len(items) - 1 - i):
-	            if items[j] > items[j + 1]:
-	```
-
-=== "Step 5"
-	``` python
-	""" Bubble sort """
-	def bubble_sort(items):
-	    for i in range(len(items)):
-	        for j in range(len(items) - 1 - i):
-	            if items[j] > items[j + 1]:
-	            items[j], items[j + 1] = items[j + 1], items[j]
-
-	```
-
-
-
-## Example of MathJax 
-
-
-$$
-\frac{n!}{k!(n-k)!} = \binom{n}{k}
-$$
-
-Lorem ipsum dolor sit amet: $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
+- Mermaid is a available as a plugin integration for MkDocs if sequence diagrams are required.
