@@ -1,12 +1,12 @@
 # Project information
-site_name: AI Module Lesson Sample
+site_name: "Lesson 1.1: Operating on data structures"
 site_description: Proof of concept for lesson
 site_author: University of Leeds
 site_url: https://squidfunk.github.io/mkdocs-material/
 
 # Repository
-repo_name: darloboy101/mkdoc_test001  
-repo_url: https://github.com/darloboy101/mkdoc_test001
+# repo_name: darloboy101/mkdoc_test001  
+# repo_url: https://github.com/darloboy101/mkdoc_test001
 
 # Copyright
 copyright: Copyright &copy; 2020 University of Leeds
@@ -33,9 +33,11 @@ google_analytics:
   - auto
 
 nav:
-  - Welcome: index.md
-  - Introduction to Python: sample001.md
-  - Displaying code: sample002.md
+  # - "Lesson 1.1: Operating on data structures": index.md
+  - Strings, list and indices: page001.md
+  - Tuples and Lists: page002.md
+
+  # - Displaying code: sample002.md
 
 
 extra_javascript:

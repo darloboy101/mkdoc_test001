@@ -1,26 +1,15 @@
-# Welcome
+# Lesson 1.1: Operating on data structures
 
-We're considering using [MkDocs](https://www.mkdocs.org) with the [Material theme](https://squidfunk.github.io/mkdocs-material/) as the basis for displaying some of the content within the distance learning AI module. 
+In this lesson, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
-Some of the advantages we've identified are:
-
-- MkDocs is Python based and can be installed using Pip. Docker images for Mkdocs with material are available. As such, should be convenient for DES and Computer Science to use.
-
-- Material theme is adaptable and provides a high standard of accessibility and mobile usability out of the box.
-
-- Content will be authored in Markdown. Git integration means that content management / version control between Computer Science and the DES should be straightforward to manage.
-
-- Content will be processed to a static site that can be hosted from the Minerva content collection. This will significantly simplify requirements for the hosting / maintenance of content. 
-
-- International students with bandwith challenges should be able to download content to view locally. It should be possible to process MkDocs content to additional formats, such as PDF and ePub. 
-
-- Robust support for displaying Python code samples using Pygments and CodeHilite.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-- Admonition extension allows block-styled content that supports pedagogical uses such as presenting questions with solutions, etc.
+By the end of this lesson, you should be able to:
 
-- PyMdown extensions expands default MkDocs syntax, including support for MathJax.
 
-- Integration between MkDocs and Jupyter Notebooks is possible (though needs to be tested in detail.)
+- lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 
-- Mermaid is a available as a plugin integration for MkDocs if sequence diagrams are required.
+- lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+
+- lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
